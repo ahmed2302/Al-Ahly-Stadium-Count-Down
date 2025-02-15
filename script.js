@@ -1,11 +1,15 @@
 function updateCounter() {
-  // 🔹 تحديد تاريخ البداية يدويًا (مثال: 14 فبراير 2025 الساعة 10:30 مساءً)
+  // 🔹 تحديد تاريخ البداية يدويًا
   const startDate = new Date("2025-02-14T22:30:00");
 
   // 🔹 حساب تاريخ النهاية بعد 1400 يوم
   const countdownDuration = 1400 * 24 * 60 * 60 * 1000; // 1400 يوم بالميلي ثانية
   const targetDate = new Date(startDate.getTime() + countdownDuration);
 
+  // 🔊 تحميل ملف الصوت
+  const audio = new Audio("./sound effect.MP3");
+
+  // ✅ تحديث العد التنازلي كل ثانية
   setInterval(() => {
     const now = new Date();
     const timeLeft = targetDate - now; // حساب الوقت المتبقي
@@ -36,8 +40,22 @@ function updateCounter() {
     document.getElementById("hours").innerText = hours;
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
+
+    // 🔊 تشغيل الصوت عند تغيير الثواني
+    audio
+      .play()
+      .catch((error) => console.log("🔇 الصوت لم يعمل تلقائيًا:", error));
   }, 1000);
 }
 
 // ✅ تشغيل الدالة عند تحميل الصفحة
 updateCounter();
+
+document.getElementById("close-btn").onclick = function () {
+  document.querySelector(".overlay").classList.add("hidden");
+  document.getElementById("close-btn").classList.add("hiden");
+  // 🔊 تشغيل الصوت عند تغيير الثواني
+  audio
+    .play()
+    .catch((error) => console.log("🔇 الصوت لم يعمل تلقائيًا:", error));
+};

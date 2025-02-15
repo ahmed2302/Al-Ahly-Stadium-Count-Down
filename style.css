@@ -66,3 +66,64 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: transform 1s ease-in-out;
+  z-index: 100;
+}
+
+.top-half,
+.bottom-half {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: red;
+  transition: transform 1s ease-in-out;
+}
+
+.top-half {
+  top: 0;
+}
+
+.bottom-half {
+  bottom: 0;
+}
+
+button {
+  position: absolute;
+  z-index: 2;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button.hiden {
+  display: none;
+}
+
+button:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.hidden .top-half {
+  transform: translateY(-100%);
+}
+
+.hidden .bottom-half {
+  transform: translateY(100%);
+}

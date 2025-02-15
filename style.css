@@ -1,0 +1,68 @@
+body {
+  font-family: "Tajawal", sans-serif;
+  text-align: center;
+  background-color: #333;
+  background-image: url("project-al-ahly-stadium-02-1024x576_1739475372.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  direction: rtl;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.counter-container {
+  color: white;
+  width: 60%;
+  border-radius: 15px;
+  position: relative;
+  bottom: 50px;
+}
+.counter-title {
+  background: linear-gradient(45deg, #e60000, #b30000);
+  font-size: 40px;
+  font-weight: bold;
+  padding: 15px 0;
+  border-radius: 6px;
+}
+.counter {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.counter-box {
+  background: white;
+  background: linear-gradient(45deg, #e60000, #b30000);
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  width: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.counter-box div {
+  padding: 20px;
+}
+
+.counter-box span {
+  display: block;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  font-weight: normal;
+  padding: 10px;
+}
+.counter-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
